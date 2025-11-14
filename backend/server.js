@@ -106,5 +106,9 @@ app.delete("/deletestudent/:rollno", async (req, res) => {
 });
 
 
-// Start Server
-app.listen(5050, () => console.log("Server running on port 5050"));
+const PORT = 5050;
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = { app };
