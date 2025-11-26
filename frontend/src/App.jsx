@@ -47,10 +47,21 @@ function App() {
   // Edit
   const editStudent = async (e) => {
     e.preventDefault();
+    let Data = {};
+    if(editData.name === "") {
+      //remove name field from editData
+      Data={ ...editData };
+      delete Data.name;
+    }
+    if(editData.email === "") {
+      //remove email field from editData
+      Data={ ...editData };
+      delete Data.email;
+    }
     await fetch(`http://localhost:5000/updatestudent/${editData.rollno}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(editData),
+      body: JSON.stringify(Data),
     });
     setEditData({ rollno: "", name: "", email: "" });
     loadStudents();
