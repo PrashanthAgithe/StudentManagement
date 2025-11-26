@@ -23,7 +23,7 @@ function App() {
 
   // Fetch all
   const loadStudents = async () => {
-    const res = await fetch("http://localhost:5051/getallstudents");
+    const res = await fetch("http://localhost:5000/getallstudents");
     const data = await res.json();
     setStudents(data);
   };
@@ -35,7 +35,7 @@ function App() {
   // Create
   const createStudent = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5051/createstudent", {
+    await fetch("http://localhost:5000/createstudent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(createData),
@@ -47,7 +47,7 @@ function App() {
   // Edit
   const editStudent = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5051/updatestudent/${editData.rollno}`, {
+    await fetch(`http://localhost:5000/updatestudent/${editData.rollno}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editData),
@@ -59,7 +59,7 @@ function App() {
   // Delete
   const deleteStudent = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5051/deletestudent/${deleteRoll}`, {
+    await fetch(`http://localhost:5000/deletestudent/${deleteRoll}`, {
       method: "DELETE",
     });
     setDeleteRoll("");

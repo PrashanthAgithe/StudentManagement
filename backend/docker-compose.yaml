@@ -3,7 +3,7 @@ services:
     build: .
     container_name: mern-backend
     ports:
-      - "5051:5051"
+      - "5000:5000"
 
   prometheus:
     image: prom/prometheus

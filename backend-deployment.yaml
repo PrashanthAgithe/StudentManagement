@@ -16,4 +16,4 @@ spec:
       - name: backend
         image: prashanthagithe/student-backend:latest
         ports:
-        - containerPort: 5051
+        - containerPort: 5000

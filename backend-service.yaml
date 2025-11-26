@@ -8,5 +8,5 @@ spec:
     app: backend       # <--- This MUST match the label in your Deployment
   ports:
     - protocol: TCP
-      port: 5051       # The port you access in browser (localhost:5051)
-      targetPort: 5051 # The port your container is running on
+      port: 5000       # The port you access in browser (localhost:5000)
+      targetPort: 5000 # The port your container is running on
