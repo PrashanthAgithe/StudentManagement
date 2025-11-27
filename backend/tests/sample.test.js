@@ -17,7 +17,7 @@ describe("POST /createstudent", () => {
 
     expect(res.statusCode).toBe(201);
     expect(res.body).toHaveProperty("_id");
-    expect(res.body.name).toBe("Test Student1");
+    expect(res.body.name).toBe("Test Student");
   });
 });
 
